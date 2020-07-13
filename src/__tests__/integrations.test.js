@@ -1,7 +1,20 @@
 import React from 'react'
 import { mount } from 'enzyme'
+import moxios from 'moxios'
 import Root from 'src/Root'
 import App from '~/App'
+
+beforeEach(() => {
+  moxios.install()
+  moxios.stubRequest('http://jsonplaceholder.typicode.com/comments', {
+    status: 200,
+    response: [{ name: 'Fetched #1' }, { name: 'Fetched #2' }],
+  })
+})
+
+afterEach(() => {
+  moxios.uninstall()
+})
 
 it('can fetch a list of comments and display them', () => {
   // Attempt to render the *entire* app
