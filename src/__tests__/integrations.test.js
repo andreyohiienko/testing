@@ -29,10 +29,10 @@ it('can fetch a list of comments and display them', (done) => {
 
   // introduce a TINY little pause
   // Expect to find a list of comments!
-  setTimeout(() => {
+  moxios.wait(() => {
     wrapped.update()
     expect(wrapped.find('li').length).toEqual(2)
     done()
     wrapped.unmount()
-  }, 100)
+  })
 })
