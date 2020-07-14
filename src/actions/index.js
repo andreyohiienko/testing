@@ -18,6 +18,6 @@ export function fetchComments() {
 export function changeAuth(isLoggedIn) {
   return {
     type: CHANGE_AUTH,
-    paylod: isLoggedIn,
+    payload: isLoggedIn,
   }
 }
