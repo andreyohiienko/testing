@@ -14,6 +14,6 @@ export default ({ dispatch }) => (next) => (action) => {
   // with that data and dispatch it
   action.payload.then(function (response) {
     const newAction = { ...action, payload: response }
-    dispatch({ newAction })
+    dispatch(newAction)
   })
 }

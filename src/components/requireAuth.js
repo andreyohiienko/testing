@@ -18,7 +18,7 @@ export default (ChildComponent) => {
     }
 
     render() {
-      return <ChildComponent {...this} />
+      return <ChildComponent {...this.props} />
     }
   }
 
